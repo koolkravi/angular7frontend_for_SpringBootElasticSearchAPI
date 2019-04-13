@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h1>
+        Mail #{{mail.id}}
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col" colspan="2">{{ mail.subject }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Sender</th>
+            <td>{{ mail.sender }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Subject</th>
+            <td>{{ mail.subject }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Reciepients</th>
+            <td>
+              {{recipientsStr}}
+              <!-- {{mail.reciepients.joins(,)}}-
+                <span ng-repeat="a in mail.reciepients"> {{a}},</span>-->
+            </td>
+
+          </tr>
+          <tr>
+            <th scope="row">CC</th>
+            <td>{{ mail.cc }}</td>
+          </tr>
+          <tr>
+            <th scope="row">BCC</th>
+            <td>{{ mail.bcc }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Date</th>
+            <td>{{ mail.date }}</td>
+          </tr>
+          <tr>
+            <th scope="row">To</th>
+            <td>{{ mail.to }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Text</th>
+            <td>{{ mail.text }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <a [routerLink]="'/mails'">
+        <button type="button" class="btn btn-dark">
+          < Go Back</button>
+      </a>
+      <button type="button" class="btn btn-dark" (click)="cancel()">
+        < cancel</button>
+    </div>
+  </div>
+</div>
